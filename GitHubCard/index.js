@@ -55,12 +55,12 @@ function createComponent(item) {
   // add content
   img.src = item.avatar_url;
   name.textContent = item.name;
-  username.textContent = item.login;
-  location.textContent = `Location:`, item.location;
-  profile.textContent = `Profile:`;
+  username.textContent = `Username: ${item.login}`;
+  location.textContent = `Location: ${item.location}`;
+  profile.textContent = `Profile: `;
   url.textContent = item.url;
-  followers.textContent = item.followers;
-  following.textContent = item.following;
+  followers.textContent = `Followers: ${item.followers}`;
+  following.textContent = `Following: ${item.following}`;
   bio.textContent = item.bio;
 
   // add class
