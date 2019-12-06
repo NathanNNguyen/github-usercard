@@ -5,7 +5,7 @@
 
 const parent = document.querySelector(`.cards`);
 axios
-  .get(`https://api.github.com/users/natenguyen51294`)
+  .get(`https://api.github.com/users/NathanNNguyen`)
   .then(response => {
     console.log(response);
     const myCard = createComponent(response.data);
@@ -14,6 +14,7 @@ axios
   .catch(error => {
     console.log(error);
   })
+
 
 /* Step 2: Inspect and study the data coming back, this is YOUR 
    github info! You will need to understand the structure of this 
