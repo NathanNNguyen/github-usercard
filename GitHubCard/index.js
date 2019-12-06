@@ -12,12 +12,6 @@ axios
     // const myCard = createComponent(response.data);
     // parent.appendChild(myCard);
   })
-axios
-  .get(`https://api.github.com/users/NathanNNguyen/followers`)
-  .then(response => {
-    console.log(response)
-    parent.appendChild(createComponent(response.data))
-  })
   .catch(error => {
     console.log(error);
   });
@@ -44,7 +38,14 @@ axios
           user, and adding that card to the DOM.
 */
 
-const followersArray = [];
+const followersArray = [`brandonharris177`, `PHONGdotTech`, `nicbongo`, `IsabellaGuo`, `acarrillo3`];
+
+followersArray.forEach(follower => {
+  axios.get(`https://api.github.com/users/${follower}`)
+    .then(response => {
+      parent.appendChild(createComponent(response.data));
+    })
+})
 function createComponent(item) {
   // create and varibles
   const card = document.createElement(`div`),
