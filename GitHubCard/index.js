@@ -8,12 +8,19 @@ axios
   .get(`https://api.github.com/users/NathanNNguyen`)
   .then(response => {
     console.log(response);
-    const myCard = createComponent(response.data);
-    parent.appendChild(myCard);
+    parent.appendChild(createComponent(response.data));
+    // const myCard = createComponent(response.data);
+    // parent.appendChild(myCard);
+  })
+axios
+  .get(`https://api.github.com/users/NathanNNguyen/followers`)
+  .then(response => {
+    console.log(response)
+    parent.appendChild(createComponent(response.data))
   })
   .catch(error => {
     console.log(error);
-  })
+  });
 
 
 /* Step 2: Inspect and study the data coming back, this is YOUR 
@@ -39,7 +46,6 @@ axios
 
 const followersArray = [];
 function createComponent(item) {
-
   // create and varibles
   const card = document.createElement(`div`),
     img = document.createElement(`img`),
